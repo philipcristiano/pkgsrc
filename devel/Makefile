@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.2674 2018/05/18 01:01:03 minskim Exp $
+# $NetBSD: Makefile,v 1.2677 2018/05/21 16:23:09 minskim Exp $
 #
 
 COMMENT=	Development utilities
@@ -78,6 +78,7 @@ SUBDIR+=	argp
 SUBDIR+=	argtable
 SUBDIR+=	as31
 SUBDIR+=	asio
+SUBDIR+=	aslc86k
 SUBDIR+=	asm2html
 SUBDIR+=	astyle
 SUBDIR+=	at-spi
@@ -520,6 +521,7 @@ SUBDIR+=	kservice
 SUBDIR+=	ktexteditor
 SUBDIR+=	kyua
 SUBDIR+=	lcc
+SUBDIR+=	lcdis
 SUBDIR+=	lcov
 SUBDIR+=	ldapsdk
 SUBDIR+=	ldpc
@@ -1991,6 +1993,7 @@ SUBDIR+=	py-game
 SUBDIR+=	py-generate
 SUBDIR+=	py-gflags
 SUBDIR+=	py-gitinspector
+SUBDIR+=	py-gitinspector-devel
 SUBDIR+=	py-gobject
 SUBDIR+=	py-gobject-shared
 SUBDIR+=	py-gobject3
