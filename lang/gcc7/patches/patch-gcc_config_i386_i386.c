@@ -10,7 +10,7 @@ Support -fstrict-calling-conventions and -msave-args.
  static enum calling_abi ix86_function_abi (const_tree);
  
 +static int ix86_nsaved_args (void);
-+static rtx_def* pro_epilogue_adjust_stack (rtx, rtx, rtx, int, bool);
++static void pro_epilogue_adjust_stack (rtx, rtx, rtx, int, bool);
 +
  
  #ifndef SUBTARGET32_DEFAULT_CPU
@@ -83,7 +83,7 @@ Support -fstrict-calling-conventions and -msave-args.
    frame->save_regs_using_mov
 -    = (TARGET_PROLOGUE_USING_MOVE && cfun->machine->use_fast_prologue_epilogue
 +    = ((TARGET_FORCE_SAVE_REGS_USING_MOV ||
-+       (TARGET_PROLOGUE_USING_MOVE && m->use_fast_prologue_epilogue))
++       (TARGET_PROLOGUE_USING_MOVE && cfun->machine->use_fast_prologue_epilogue))
         /* If static stack checking is enabled and done with probes,
  	  the registers need to be saved before allocating the frame.  */
         && flag_stack_check != STATIC_BUILTIN_STACK_CHECK);

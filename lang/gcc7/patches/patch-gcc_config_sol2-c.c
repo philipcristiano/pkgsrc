@@ -4,20 +4,18 @@ Update cmn_err format specifier.
 
 --- gcc/config/sol2-c.c.orig	2017-01-01 12:07:43.905435000 +0000
 +++ gcc/config/sol2-c.c
-@@ -40,14 +40,18 @@ static const format_length_info cmn_err_
+@@ -40,7 +40,10 @@ static const format_length_info cmn_err_
  
  static const format_flag_spec cmn_err_flag_specs[] =
  {
--  { 'w',  0, 0, N_("field width"),     N_("field width in printf format"),     STD_C89 },
--  { 'L',  0, 0, N_("length modifier"), N_("length modifier in printf format"), STD_C89 },
-+  { '0',  0, 0, 0, N_("'0' flag"),        N_("the '0' flag"),                     STD_C89 },
-+  { '-',  0, 0, 0, N_("'-' flag"),        N_("the '-' flag"),                     STD_C89 },
-+  { 'w',  0, 0, N_("field width"),        N_("field width in printf format"),     STD_C89 },
-+  { 'p',  0, 0, 0, N_("precision"),       N_("precision in printf format"),       STD_C89 },
-+  { 'L',  0, 0, N_("length modifier"),    N_("length modifier in printf format"), STD_C89 },
++  { '0',  0, 0, N_("'0' flag"),        N_("the '0' flag"),                     STD_C89 },
++  { '-',  0, 0, N_("'-' flag"),        N_("the '-' flag"),                     STD_C89 },
+   { 'w',  0, 0, N_("field width"),     N_("field width in printf format"),     STD_C89 },
++  { 'p',  0, 0, N_("precision"),       N_("precision in printf format"),       STD_C89 },
+   { 'L',  0, 0, N_("length modifier"), N_("length modifier in printf format"), STD_C89 },
    { 0, 0, 0, NULL, NULL, STD_C89 }
  };
- 
+@@ -48,6 +51,7 @@ static const format_flag_spec cmn_err_fl
  
  static const format_flag_pair cmn_err_flag_pairs[] =
  {
