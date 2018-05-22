@@ -49,16 +49,16 @@ SUBST_CLASSES+=		vars
 SUBST_MESSAGE.vars=	Setting target machine name path in ${SUBST_FILES.vars}
 SUBST_STAGE.vars=	pre-configure
 SUBST_FILES.vars=	gcc/Makefile.in
-SUBST_VARS.vars=	GCC_TARGET_MACHINE
+SUBST_VARS.vars=	MACHINE_GNU_PLATFORM
 
 .include "../../mk/bsd.prefs.mk"
 
 # For the tools build (i.e. when not using USE_GCC_LOCALBASE_PREFIX) we
 # do not want rpaths to leak into final binaries.
-.if ${USE_GCC_LOCALBASE_PREFIX:Uno:tl} != "yes"
-SUBST_SED.vars+=	-e '/-R/d'
-SUBST_SED.vars+=	-e '/-DLINK_LIBGCC_SPEC=/d'
-.endif
+#.if ${USE_GCC_LOCALBASE_PREFIX:Uno:tl} != "yes"
+#SUBST_SED.vars+=	-e '/-R/d'
+#SUBST_SED.vars+=	-e '/-DLINK_LIBGCC_SPEC=/d'
+#.endif
 
 LANGS=			c
 
