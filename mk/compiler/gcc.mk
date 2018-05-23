@@ -921,6 +921,8 @@ PREPEND_PATH+=	${_GCC_DIR}/bin
 .      include "../../lang/gcc5-libs/buildlink3.mk"
 .    elif !empty(CC_VERSION:Mgcc-6.*)
 .      include "../../lang/gcc6-libs/buildlink3.mk"
+.    elif !empty(CC_VERSION:Mgcc-7.*)
+.      include "../../lang/gcc7-libs/buildlink3.mk"
 .    else
 PKG_FAIL_REASON+=	"No USE_PKGSRC_GCC_RUNTIME support for ${CC_VERSION}"
 .    endif
